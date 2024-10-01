@@ -4,7 +4,7 @@ import EventItem from "../components/EventItem";
 
 const events = DUMMY_EVENTS;
 
-function EventDetailPage() {
+function EventDetail() {
     const { id } = useParams();
 
     const currentEvent = events.find((event) => event.id === id);
@@ -19,4 +19,4 @@ function EventDetailPage() {
     );
 }
 
-export default EventDetailPage;
+export default EventDetail;

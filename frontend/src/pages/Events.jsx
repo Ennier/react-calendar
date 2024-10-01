@@ -3,7 +3,7 @@ import  DUMMY_EVENTS from "../utils/DUMMY_EVENTS";
 
 const events = DUMMY_EVENTS;
 
-function EventsPage() {
+function Events() {
     return (
         <>
             <h1>
@@ -15,4 +15,4 @@ function EventsPage() {
     );
 }
 
-export default EventsPage;
+export default Events;
