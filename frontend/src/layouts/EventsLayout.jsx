@@ -4,10 +4,8 @@ import { Outlet } from "react-router-dom";
 function EventsLayout() {
     return (
         <>
-           <EventsNavigation />
-           <main>
-               <Outlet />
-           </main>
+            <EventsNavigation />
+            <Outlet />
         </>
     );
 }
