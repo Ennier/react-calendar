@@ -28,11 +28,13 @@ import NewEventPage from './pages/NewEventPage';
 import EditEventPage from './pages/EditEventPage';
 import RootLayout from './layouts/RootLayout';
 import EventsLayout from './layouts/EventsLayout';
+import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <RootLayout />,  // Root layout containing the navigation
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       {
