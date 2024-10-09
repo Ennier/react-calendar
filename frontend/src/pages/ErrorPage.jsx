@@ -10,12 +10,12 @@ export default function ErrorPage() {
 
     if (error.status === 500) {
         title = 'Oops! Something went wrong';
-        message = JSON.stringify(error.data).message;
+        message = error.data.message;
     }
 
     if (error.status === 404) {
         title = 'Not found';
-        message = 'Could not find resource.';
+        message = error.data.message;
     }
 
     return (
