@@ -1,22 +1,31 @@
-import { useParams } from "react-router-dom";
-import DUMMY_EVENTS from "../utils/DUMMY_EVENTS";
+import { json, useLoaderData } from "react-router-dom";
 import EventItem from "../components/EventItem";
 
-const events = DUMMY_EVENTS;
-
 function EventDetailPage() {
-    const { id } = useParams();
-
-    const currentEvent = events.find((event) => event.id === id);
+    const data = useLoaderData();
 
     return (
         <>
-            <h1>
-                Event Detail Page
-            </h1>
-            <EventItem event={currentEvent}></EventItem>
+            <EventItem event={data.event}></EventItem>
         </>
     );
 }
 
 export default EventDetailPage;
+
+export async function loader({request, params}) {
+    const id = params.id;
+
+    const response = await fetch('http://localhost:8080/events/' + id);
+
+    if (!response.ok) {
+        throw json(
+            {message: 'Could not fetch event details.'},
+            {
+                status: 500
+            }
+        );
+    } else {
+        return response;
+    }
+}
