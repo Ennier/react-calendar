@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import MainNavigation from "../components/MainNavigation";
 
-function RootLayout(params) {
+function Root(params) {
     const navigation = useNavigation();
 
     return (
@@ -15,4 +15,4 @@ function RootLayout(params) {
     )
 }
 
-export default RootLayout;
+export default Root;
