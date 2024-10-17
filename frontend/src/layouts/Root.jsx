@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import MainNavigation from "../components/MainNavigation";
 
-function Root(params) {
+function Root() {
     const navigation = useNavigation();
 
     return (
